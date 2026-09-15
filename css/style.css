@@ -4,20 +4,26 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Permite calcular bordes y paddings dentro del tamaño del elemento */
+    box-sizing: border-box;
+    /* Permite calcular bordes y paddings dentro del tamaño del elemento */
 }
 
 body {
     font-family: 'Outfit', 'Arial', sans-serif;
-    background-color: #272757; /* Color de fondo de la página */
+    background-color: #272757;
+    /* Color de fondo de la página */
 
     /* ESTRUCTURA DE CENTRADO (FLEXBOX) */
     display: flex;
-    justify-content: center; /* Centra la tarjeta horizontalmente */
-    align-items: center;     /* Centra la tarjeta verticalmente */
+    justify-content: center;
+    /* Centra la tarjeta horizontalmente */
+    align-items: center;
+    /* Centra la tarjeta verticalmente */
 
-    min-height: 100vh;       /* Fuerza al body a ocupar todo el alto de la pantalla visible */
-    padding: 20px;           /* Colchón de seguridad para que la tarjeta no choque en celulares */
+    min-height: 100vh;
+    /* Fuerza al body a ocupar todo el alto de la pantalla visible */
+    padding: 20px;
+    /* Colchón de seguridad para que la tarjeta no choque en celulares */
 }
 
 /* ==========================================================================
@@ -27,11 +33,69 @@ body {
     background-color: #d5c58a;
 
     /* RESPONSIVIDAD */
-    width: 90%;             /* Ocupará el 90% de la pantalla en dispositivos móviles */
-    max-width: 600px;       /* En pantallas grandes, se detendrá y no medirá más de 600px */
+    width: 90%;
+    /* Ocupará el 90% de la pantalla en dispositivos móviles */
+    max-width: 600px;
+    /* En pantallas grandes, se detendrá y no medirá más de 600px */
 
     border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Sombra suave para dar profundidad */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    /* Sombra suave para dar profundidad */
     padding: 40px;
-    text-align: center;      /* Centra los textos que pongas dentro por defecto */
+    text-align: center;
+    /* Centra los textos que pongas dentro por defecto */
+}
+
+/* ==========================================================================
+   3. MENÚ DE NAVEGACIÓN
+   ========================================================================== */
+nav {
+    display: flex;
+    justify-content: flex-end;
+    /* Alinea los enlaces a la derecha */
+    gap: 20px;
+    /* Espacio de separación entre cada enlace */
+    margin-bottom: 25px;
+    /* Espacio hacia abajo para no chocar con la foto */
+}
+
+nav a {
+    text-decoration: none;
+    /* Quita la línea subrayada azul típica de los links */
+    color: #272757;
+    /* Color del texto del enlace (el azul oscuro del fondo) */
+    font-weight: 600;
+    /* Hace la letra semi-negrita */
+    font-size: 0.95rem;
+    /* Tamaño de la fuente */
+    transition: color 0.3s;
+    /* Hace que el cambio de color sea suave al pasar el ratón */
+}
+
+nav a:hover {
+    color: #ffffff;
+    /* Color blanco al pasar el cursor sobre el enlace */
+}
+
+/* ==========================================================================
+   4. IMAGEN DE PERFIL (AVATAR CIRCULAR)
+   ========================================================================== */
+.avatar-container {
+    margin-bottom: 20px;
+    /* Espacio entre la foto y tu nombre debajo */
+}
+
+.gabriela-img {
+    width: 150px;
+    /* Ancho fijo de la imagen */
+    height: 150px;
+    /* Alto fijo (igual al ancho para que sea un cuadrado perfecto) */
+    border-radius: 50%;
+    /* Transforma el cuadrado en un círculo perfecto */
+    object-fit: cover;
+    /* Evita que la foto se estire o deforme, recortando el exceso */
+    border: 4px solid #ffffff;
+    /* Borde blanco alrededor para resaltarla */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    /* Sombra suave para darle relieve */
 }
