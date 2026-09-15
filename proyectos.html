@@ -4,29 +4,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio - Gabriela Pino</title>
+    <title>Proyectos - Gabriela Pino</title>
     <!-- Vinculación del archivo CSS externo -->
     <link rel="stylesheet" href="css/style.css">
-    <!-- Opcional: Tipografía desde Google Fonts (Outfit) -->
+    <!-- Tipografía Outfit desde Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
-<main class="card">
-    <div class="projects-container">
-        <h2>Mis Proyectos</h2>
-        <div class="projects-grid">
-            <!-- Proyecto 1 -->
-            <article class="project-card">
-                <img src="img/proyecto1.jpg" alt="Captura de pantalla de Proyecto 1">
-                <h3>Proyecto 1:CUSTOMER JOURNEY MAP SCORE </h3>
-                <p>Este proyecto es un Customer Journey Map de la bebida energética score. Consiste en el análisis
-                    de la experiencia del cliente con score, identificando los puntos de dolor y las oportunidades de
-                    mejora.</p>
-                <a href="" target="_blank" class="btn-link">Ver Código</a>
+<body class="light-theme">
+
+    <!-- CONTENEDOR PRINCIPAL TIPO TARJETA BLANCA -->
+    <main class="card card-projects">
+
+        <!-- MENÚ DE NAVEGACIÓN SUPERIOR -->
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="proyectos.html" class="active">Proyectos</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+
+        <!-- ENCABEZADO DE LA SECCIÓN PROYECTOS -->
+        <header class="projects-header">
+            <h1 class="projects-title">Proyectos</h1>
+            <div class="accent-line"></div>
+            <p class="projects-subtitle">Aquí algunos proyectos en los que he trabajado.</p>
+        </header>
+
+        <!-- LISTA DE PROYECTOS -->
+        <section class="projects-list">
+
+            <!-- PROYECTO 1 -->
+            <article class="project-row">
+                <div class="project-info">
+                    <h3>Customer Journey Map - Score</h3>
+                    <p>Análisis integral de la experiencia y recorrido del cliente con la bebida energética Score, detectando puntos de dolor y oportunidades de fidelización.</p>
+                    <a href="#" class="project-link">Ver proyecto <span>&rarr;</span></a>
+                </div>
+                <div class="project-preview">
+                    <img src="img/proyecto1.png" alt="Customer Journey Map Score">
+                </div>
             </article>
 
-            <!-- Repite la estructura para el Proyecto 2 y Proyecto 3 -->
-        </div>
-    </div
+            <!-- PROYECTO 2 -->
+            <article class="project-row">
+                <div class="project-info">
+                    <h3>Plan de Marketing: McDonald's</h3>
+                    <p>Diagnóstico estratégico del entorno competitivo y desarrollo de oportunidades comerciales enfocado en posicionamiento de marca.</p>
+                    <a href="#" class="project-link">Ver proyecto <span>&rarr;</span></a>
+                </div>
+                <div class="project-preview">
+                    <img src="img/proyecto2.png" alt="Plan de Marketing McDonald's">
+                </div>
+            </article>
+
+            <!-- PROYECTO 3 -->
+            <article class="project-row">
+                <div class="project-info">
+                    <h3>Propuesta de Marketing: IKEA Chile</h3>
+                    <p>Diseño de estrategia para impulsar ventas y lealtad de clientes mediante tácticas digitales y optimización de canales comerciales.</p>
+                    <a href="#" class="project-link">Ver proyecto <span>&rarr;</span></a>
+                </div>
+                <div class="project-preview">
+                    <img src="img/proyecto3.png" alt="Propuesta de Marketing IKEA Chile">
+                </div>
+            </article>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
