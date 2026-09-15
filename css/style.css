@@ -395,3 +395,269 @@ body.light-theme {
         font-size: 1.75rem;
     }
 }
+
+/* ==========================================================================
+   9. PÁGINA DE CONTACTO (ADAPTADA A LA PALETA DE TU PÁGINA)
+   ========================================================================== */
+
+/* Tarjeta principal para contacto */
+.card-contact {
+    background-color: #d5c58a;
+    width: 92%;
+    max-width: 840px;
+    border-radius: 24px;
+    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.15);
+    padding: 45px 50px;
+    text-align: left;
+}
+
+/* Menú de navegación en contacto */
+.card-contact nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 24px;
+    margin-bottom: 25px;
+}
+
+.card-contact nav a {
+    text-decoration: none;
+    color: #272757;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.25s ease;
+    padding-bottom: 4px;
+}
+
+.card-contact nav a:hover {
+    color: #080342;
+}
+
+.card-contact nav a.active {
+    color: #080342;
+    font-weight: 600;
+    border-bottom: 2.5px solid #030125;
+}
+
+/* Encabezado: Título, barrita decorativa y subtítulo */
+.contact-header {
+    margin-bottom: 25px;
+}
+
+.contact-title {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: #080342;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+}
+
+.contact-subtitle {
+    color: #272757;
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.55;
+}
+
+/* Disposición en 2 columnas (Formulario a la izq, Ilustración a la der) */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 40px;
+    align-items: center;
+}
+
+/* Formulario */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #080342;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background-color: #ffffff;
+    border: 1.5px solid rgba(8, 3, 66, 0.18);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-family: inherit;
+    font-size: 0.92rem;
+    color: #080342;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #8c8c9e;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #080342;
+    box-shadow: 0 0 0 3px rgba(8, 3, 66, 0.15);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 105px;
+}
+
+/* Botón Enviar mensaje con icono de avión de papel */
+.btn-send {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #080342;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 13px 24px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(8, 3, 66, 0.25);
+    transition: all 0.25s ease;
+    margin-top: 4px;
+    width: 100%;
+}
+
+.btn-send svg {
+    transition: transform 0.25s ease;
+}
+
+.btn-send:hover {
+    background-color: #030125;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(8, 3, 66, 0.35);
+}
+
+.btn-send:hover svg {
+    transform: translateX(4px) translateY(-2px);
+}
+
+/* Columna derecha: Ilustración y cajita de contacto directo */
+.contact-sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+}
+
+.contact-illustration {
+    width: 100%;
+    max-width: 270px;
+    aspect-ratio: 1 / 1;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.2) 70%);
+    box-shadow: 0 10px 25px rgba(8, 3, 66, 0.08);
+}
+
+.contact-illustration img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+.contact-illustration:hover img {
+    transform: scale(1.04);
+}
+
+/* Tarjeta flotante "También puedes escribirme a..." */
+.direct-contact-card {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(8, 3, 66, 0.12);
+    border-radius: 16px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    backdrop-filter: blur(4px);
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.direct-contact-card:hover {
+    background-color: rgba(255, 255, 255, 0.85);
+    transform: translateY(-2px);
+}
+
+.direct-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background-color: #080342;
+    color: #d5c58a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.direct-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.direct-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #080342;
+}
+
+.direct-email {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #080342;
+    text-decoration: none;
+    transition: color 0.2s;
+    word-break: break-all;
+}
+
+.direct-email:hover {
+    text-decoration: underline;
+}
+
+.direct-note {
+    font-size: 0.76rem;
+    color: #3b3b72;
+}
+
+/* Responsividad para móviles en contacto */
+@media (max-width: 760px) {
+    .card-contact {
+        padding: 30px 20px;
+        width: 100%;
+        border-radius: 18px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .contact-illustration {
+        max-width: 220px;
+    }
+}
