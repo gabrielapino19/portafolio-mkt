@@ -729,3 +729,22 @@ body.light-theme {
         max-width: 220px;
     }
 }
+
+/* ==========================================================================
+   8. PIE DE PÁGINA SEMÁNTICO Y CRÉDITOS
+   ========================================================================== */
+.footer-credit,
+.projects-footer,
+.contact-footer {
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(201, 154, 71, 0.25);
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--ocean-blue);
+    opacity: 0.85;
+}
+
+.profile-footer {
+    margin-top: 5px;
+}

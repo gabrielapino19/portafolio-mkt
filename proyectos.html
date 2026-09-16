@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proyectos destacados de Gabriela Pino en Marketing Digital: Score, McDonald's e IKEA Chile.">
+    <meta name="author" content="Gabriela Pino">
     <title>Proyectos - Gabriela Pino</title>
     <!-- Vinculación del archivo CSS externo -->
     <link rel="stylesheet" href="css/style.css">
@@ -15,25 +17,28 @@
 
 <body class="light-theme">
 
-    <!-- CONTENEDOR PRINCIPAL TIPO TARJETA BLANCA -->
+    <!-- CONTENEDOR PRINCIPAL TIPO TARJETA BLANCA (MAIN) -->
     <main class="card card-projects">
 
-        <!-- MENÚ DE NAVEGACIÓN SUPERIOR -->
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="proyectos.html" class="active">Proyectos</a>
-            <a href="contacto.html">Contacto</a>
-        </nav>
+        <!-- ENCABEZADO DE LA TARJETA: NAVEGACIÓN Y TÍTULOS -->
+        <header class="card-projects-header">
+            <!-- MENÚ DE NAVEGACIÓN SUPERIOR -->
+            <nav aria-label="Navegación principal">
+                <a href="index.html">Inicio</a>
+                <a href="proyectos.html" class="active" aria-current="page">Proyectos</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
 
-        <!-- ENCABEZADO DE LA SECCIÓN PROYECTOS -->
-        <header class="projects-header">
-            <h1 class="projects-title">Proyectos</h1>
-            <div class="accent-line"></div>
-            <p class="projects-subtitle">Aquí algunos proyectos en los que he trabajado.</p>
+            <!-- ENCABEZADO DE LA SECCIÓN PROYECTOS -->
+            <div class="projects-header">
+                <h1 class="projects-title">Proyectos</h1>
+                <div class="accent-line" role="separator" aria-hidden="true"></div>
+                <p class="projects-subtitle">Aquí algunos proyectos en los que he trabajado.</p>
+            </div>
         </header>
 
-        <!-- LISTA DE PROYECTOS -->
-        <section class="projects-list">
+        <!-- LISTA DE PROYECTOS (SECCIÓN PRINCIPAL) -->
+        <section class="projects-list" aria-label="Listado de proyectos destacados">
 
             <!-- PROYECTO 1 -->
             <article class="project-row">
@@ -42,14 +47,14 @@
                     <p>Análisis integral de la experiencia y recorrido del cliente con la bebida energética Score,
                         detectando puntos de dolor y oportunidades de fidelización.</p>
                     <a href="https://canva.link/9pp7b48ipoey9gr" target="_blank" rel="noopener noreferrer"
-                        class="project-link">Ver proyecto <span>&rarr;</span></a>
+                        class="project-link" aria-label="Ver presentación del proyecto Score en Canva">Ver proyecto <span>&rarr;</span></a>
                 </div>
-                <div class="project-preview">
+                <figure class="project-preview">
                     <a href="https://canva.link/9pp7b48ipoey9gr" target="_blank" rel="noopener noreferrer"
-                        style="display: block; width: 100%; height: 100%;">
-                        <img src="img/proyecto1.png" alt="Customer Journey Map Score">
+                        style="display: block; width: 100%; height: 100%;" aria-label="Ver presentación Customer Journey Map de Score">
+                        <img src="img/proyecto1.png" alt="Presentación Customer Journey Map de Score" loading="lazy">
                     </a>
-                </div>
+                </figure>
             </article>
 
             <!-- PROYECTO 2 -->
@@ -59,14 +64,14 @@
                     <p>Diagnóstico estratégico del entorno competitivo y desarrollo de oportunidades comerciales
                         enfocado en posicionamiento de marca.</p>
                     <a href="https://canva.link/mlxhmiledrrnfya" target="_blank" rel="noopener noreferrer"
-                        class="project-link">Ver proyecto <span>&rarr;</span></a>
+                        class="project-link" aria-label="Ver presentación del proyecto McDonald's en Canva">Ver proyecto <span>&rarr;</span></a>
                 </div>
-                <div class="project-preview">
+                <figure class="project-preview">
                     <a href="https://canva.link/mlxhmiledrrnfya" target="_blank" rel="noopener noreferrer"
-                        style="display: block; width: 100%; height: 100%;">
-                        <img src="img/proyecto2.png" alt="Plan de Marketing McDonald's">
+                        style="display: block; width: 100%; height: 100%;" aria-label="Ver presentación Plan de Marketing McDonald's">
+                        <img src="img/proyecto2.png" alt="Presentación Plan de Marketing McDonald's" loading="lazy">
                     </a>
-                </div>
+                </figure>
             </article>
 
             <!-- PROYECTO 3 -->
@@ -76,17 +81,22 @@
                     <p>Diseño de estrategia para impulsar ventas y lealtad de clientes mediante tácticas digitales y
                         optimización de canales comerciales.</p>
                     <a href="https://canva.link/3sh2jwg6t5uokdz" target="_blank" rel="noopener noreferrer"
-                        class="project-link">Ver proyecto <span>&rarr;</span></a>
+                        class="project-link" aria-label="Ver presentación del proyecto IKEA Chile en Canva">Ver proyecto <span>&rarr;</span></a>
                 </div>
-                <div class="project-preview">
+                <figure class="project-preview">
                     <a href="https://canva.link/3sh2jwg6t5uokdz" target="_blank" rel="noopener noreferrer"
-                        style="display: block; width: 100%; height: 100%;">
-                        <img src="img/proyecto3.png" alt="Propuesta de Marketing IKEA Chile">
+                        style="display: block; width: 100%; height: 100%;" aria-label="Ver presentación Propuesta de Marketing IKEA Chile">
+                        <img src="img/proyecto3.png" alt="Presentación Propuesta de Marketing IKEA Chile" loading="lazy">
                     </a>
-                </div>
+                </figure>
             </article>
 
         </section>
+
+        <!-- PIE DE PÁGINA SEMÁNTICO (FOOTER) -->
+        <footer class="projects-footer">
+            <p><small>© 2026 Gabriela Pino · Portafolio Profesional</small></p>
+        </footer>
 
     </main>
 
