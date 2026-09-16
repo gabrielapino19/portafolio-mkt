@@ -107,7 +107,7 @@ nav a {
 
 nav a:hover,
 nav a.active {
-    color: #ffffff;
+    color: var(--antique-gold);
     /* Color blanco al pasar el cursor sobre el enlace o cuando está activo */
 }
 
@@ -747,4 +747,4 @@ body.light-theme {
 
 .profile-footer {
     margin-top: 5px;
-}
+}

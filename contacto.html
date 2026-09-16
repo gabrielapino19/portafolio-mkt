@@ -13,15 +13,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Estilos de la librería de animación AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body class="light-theme">
 
     <!-- CONTENEDOR PRINCIPAL TIPO TARJETA (MAIN) -->
-    <main class="card card-contact">
+    <main class="card card-contact" data-aos="fade-up" data-aos-duration="900">
 
         <!-- ENCABEZADO: NAVEGACIÓN Y TÍTULOS -->
-        <header class="card-contact-header">
+        <header class="card-contact-header" data-aos="fade-down" data-aos-delay="100">
             <!-- MENÚ DE NAVEGACIÓN SUPERIOR -->
             <nav aria-label="Navegación principal">
                 <a href="index.html">Inicio</a>
@@ -43,8 +45,8 @@
         <!-- CONTENIDO PRINCIPAL: FORMULARIO A LA IZQUIERDA + ILUSTRACIÓN Y DATOS A LA DERECHA -->
         <div class="contact-grid">
 
-            <!-- COLUMNA IZQUIERDA: FORMULARIO SEMÁNTICO -->
-            <form class="contact-form" action="#" method="POST" aria-label="Formulario de contacto">
+            <!-- COLUMNA IZQUIERDA: FORMULARIO SEMÁNTICO CON ANIMACIÓN -->
+            <form class="contact-form" action="#" method="POST" aria-label="Formulario de contacto" data-aos="fade-right" data-aos-delay="200">
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
                     <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name">
@@ -72,7 +74,7 @@
             </form>
 
             <!-- COLUMNA DERECHA: ASIDE CON ILUSTRACIÓN Y DATOS DE CONTACTO DIRECTO -->
-            <aside class="contact-sidebar" aria-label="Información de contacto directo">
+            <aside class="contact-sidebar" aria-label="Información de contacto directo" data-aos="fade-left" data-aos-delay="300">
                 <figure class="contact-illustration">
                     <img src="img/contacto-ilustracion.jpg" alt="Ilustración 3D de sobre con carta y avión de papel">
                 </figure>
@@ -131,6 +133,15 @@
                 this.reset();
             });
         }
+    </script>
+
+    <!-- Librería de animación AOS (Animate On Scroll) -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
     </script>
 
 </body>
