@@ -82,9 +82,8 @@
                         </svg>
                     </div>
                     <div class="direct-info">
-                        <span class="direct-label">También puedes escribirme a</span>
-                        <a href="mailto:gabriela.a.pino.lillo@gmail.com"
-                            class="direct-email">gabriela.a.pino.lillo@gmail.com</a>
+                        <span class="direct-label">También puedes escribirme a:</span>
+                        <a href="mailto:gabriela.a.pino.lillo14@gmail.com" class="direct-email">gabriela.a.pino.lillo14@gmail.com</a>
                         <span class="direct-note">Responderé a la brevedad posible.</span>
                     </div>
                 </div>
@@ -93,6 +92,36 @@
         </div>
 
     </main>
+
+    <!-- INTERACTIVIDAD: MOVIMIENTO DE LA CARTA Y ENVÍO DEL FORMULARIO -->
+    <script>
+        // Movimiento interactivo 3D de la carta con el cursor del ratón
+        const cardIllustration = document.querySelector('.contact-illustration');
+        if (cardIllustration) {
+            cardIllustration.addEventListener('mousemove', (e) => {
+                const rect = cardIllustration.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                const rotateX = -(y / (rect.height / 2)) * 14;
+                const rotateY = (x / (rect.width / 2)) * 14;
+                cardIllustration.style.transform = `perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.04)`;
+            });
+
+            cardIllustration.addEventListener('mouseleave', () => {
+                cardIllustration.style.transform = '';
+            });
+        }
+
+        // Confirmación amigable al enviar el formulario
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                alert('¡Gracias por comunicarte! Responderé a tu mensaje a la brevedad posible.');
+                this.reset();
+            });
+        }
+    </script>
 
 </body>
 

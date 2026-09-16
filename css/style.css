@@ -34,7 +34,7 @@
 
 body {
     font-family: 'Outfit', 'Arial', sans-serif;
-    
+
     /* CÓMO SE HACE EL DEGRADADO AZUL:
        Utilizamos 'linear-gradient(135deg, ...)' combinando el Navy Blue (#0D1B2A)
        y el Ocean Blue (#1B365D). El ángulo a 135 grados da una inclinación diagonal elegante.
@@ -107,12 +107,13 @@ nav a {
 
 nav a:hover,
 nav a.active {
-    color: var(--antique-gold);
-    /* Color dorado Antique Gold al pasar el cursor o estar activo */
+    color: #ffffff;
+    /* Color blanco al pasar el cursor sobre el enlace o cuando está activo */
 }
 
 nav a.active {
-    border-bottom: 2px solid var(--antique-gold);
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 2px;
 }
 
 /* ==========================================================================
@@ -269,7 +270,7 @@ body.light-theme {
 
 .card-projects nav a {
     text-decoration: none;
-    color: var(--ocean-blue);
+    color: #555e6d;
     font-weight: 500;
     font-size: 0.95rem;
     transition: color 0.25s ease, border-color 0.25s ease;
@@ -295,7 +296,7 @@ body.light-theme {
 .projects-title {
     font-size: 2.1rem;
     font-weight: 700;
-    color: var(--navy-blue);
+    color: #111827;
     letter-spacing: -0.5px;
     margin-bottom: 8px;
 }
@@ -309,7 +310,7 @@ body.light-theme {
 }
 
 .projects-subtitle {
-    color: var(--ocean-blue);
+    color: #6b7280;
     font-size: 0.95rem;
     font-weight: 500;
     line-height: 1.5;
@@ -328,7 +329,7 @@ body.light-theme {
     justify-content: space-between;
     gap: 35px;
     padding: 28px 0;
-    border-bottom: 1px solid rgba(201, 154, 71, 0.25);
+    border-bottom: 1px solid #edf0f5;
 }
 
 .project-row:last-child {
@@ -344,14 +345,13 @@ body.light-theme {
 .project-info h3 {
     font-size: 1.25rem;
     font-weight: 700;
-    color: var(--navy-blue);
+    color: #111827;
     margin-bottom: 8px;
     letter-spacing: -0.2px;
 }
 
 .project-info p {
-    color: var(--navy-blue);
-    opacity: 0.85;
+    color: #6b7280;
     font-size: 0.92rem;
     line-height: 1.55;
     margin-bottom: 14px;
@@ -602,6 +602,24 @@ body.light-theme {
     gap: 22px;
 }
 
+/* Animación de flotación continua para la carta */
+@keyframes letterFloat {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+        box-shadow: 0 10px 25px rgba(8, 3, 66, 0.1);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(1.5deg);
+        box-shadow: 0 20px 35px rgba(8, 3, 66, 0.2);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+        box-shadow: 0 10px 25px rgba(8, 3, 66, 0.1);
+    }
+}
+
 .contact-illustration {
     width: 100%;
     max-width: 270px;
@@ -611,9 +629,8 @@ body.light-theme {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(circle, rgba(230, 193, 122, 0.3) 0%, rgba(27, 54, 93, 0.08) 70%);
-    border: 1px solid rgba(201, 154, 71, 0.25);
-    box-shadow: 0 10px 25px rgba(13, 27, 42, 0.1);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.2) 70%);
+    box-shadow: 0 10px 25px rgba(8, 3, 66, 0.08);
 }
 
 .contact-illustration img {
@@ -621,11 +638,12 @@ body.light-theme {
     height: 100%;
     object-fit: cover;
     display: block;
+    pointer-events: none;
     transition: transform 0.35s ease;
 }
 
 .contact-illustration:hover img {
-    transform: scale(1.04);
+    transform: scale(1.05);
 }
 
 /* Tarjeta flotante "También puedes escribirme a..." */
