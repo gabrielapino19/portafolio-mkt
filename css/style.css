@@ -1,4 +1,28 @@
 /* ==========================================================================
+   VARIABLES DE LA PALETA NAVY & GOLD
+   ========================================================================== 
+   Definimos los colores de la paleta como variables CSS para que sea fácil
+   modificarlos y mantener la coherencia en todo el sitio web:
+   - Navy Blue: #0D1B2A (Azul marino profundo)
+   - Ocean Blue: #1B365D (Azul océano)
+   - Antique Gold: #C99A47 (Dorado envejecido / clásico)
+   - Champagne Gold: #E6C17A (Dorado champán luminoso)
+   - Ivory: #F5EBDD (Marfil cálido / fondo de tarjeta elegante)
+   ========================================================================== */
+:root {
+    --navy-blue: #0D1B2A;
+    --ocean-blue: #1B365D;
+    --antique-gold: #C99A47;
+    --champagne-gold: #E6C17A;
+    --ivory: #F5EBDD;
+
+    /* Degradados reutilizables */
+    --bg-gradient: linear-gradient(135deg, #0D1B2A 0%, #1B365D 50%, #0D1B2A 100%);
+    --gold-gradient: linear-gradient(90deg, #C99A47 0%, #E6C17A 100%);
+    --gold-btn-gradient: linear-gradient(135deg, #C99A47 0%, #E6C17A 100%);
+}
+
+/* ==========================================================================
    1. RESET Y ESTILOS GENERALES
    ========================================================================== */
 * {
@@ -10,8 +34,14 @@
 
 body {
     font-family: 'Outfit', 'Arial', sans-serif;
-    background-color: #272757;
-    /* Color de fondo de la página */
+    
+    /* CÓMO SE HACE EL DEGRADADO AZUL:
+       Utilizamos 'linear-gradient(135deg, ...)' combinando el Navy Blue (#0D1B2A)
+       y el Ocean Blue (#1B365D). El ángulo a 135 grados da una inclinación diagonal elegante.
+       'background-attachment: fixed' fija el degradado para que cubra toda la pantalla al hacer scroll. */
+    background: var(--bg-gradient);
+    background-attachment: fixed;
+    color: var(--navy-blue);
 
     /* ESTRUCTURA DE CENTRADO (FLEXBOX) */
     display: flex;
@@ -27,10 +57,12 @@ body {
 }
 
 /* ==========================================================================
-   2. CONTENEDOR CENTRAL RESPONSIVO (CARD)
+   2. CONTENEDOR CENTRAL RESPONSIVO (CARD DE INICIO)
    ========================================================================== */
 .card {
-    background-color: #d5c58a;
+    /* Color Ivory (marfil) de la paleta para simular papel fino y elegante */
+    background-color: var(--ivory);
+    border: 1px solid rgba(201, 154, 71, 0.35);
 
     /* RESPONSIVIDAD */
     width: 90%;
@@ -38,9 +70,9 @@ body {
     max-width: 600px;
     /* En pantallas grandes, se detendrá y no medirá más de 600px */
 
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    /* Sombra suave para dar profundidad */
+    border-radius: 20px;
+    box-shadow: 0 16px 40px rgba(13, 27, 42, 0.35);
+    /* Sombra profunda con el tono Navy Blue */
     padding: 40px;
     text-align: center;
     /* Centra los textos que pongas dentro por defecto */
@@ -62,25 +94,25 @@ nav {
 nav a {
     text-decoration: none;
     /* Quita la línea subrayada azul típica de los links */
-    color: #272757;
-    /* Color del texto del enlace (el azul oscuro del fondo) */
+    color: var(--ocean-blue);
+    /* Color inicial del enlace usando Ocean Blue */
     font-weight: 600;
     /* Hace la letra semi-negrita */
     font-size: 0.95rem;
     /* Tamaño de la fuente */
-    transition: color 0.3s;
-    /* Hace que el cambio de color sea suave al pasar el ratón */
+    transition: color 0.3s ease, border-color 0.3s ease;
+    /* Transición suave al pasar el ratón */
+    padding-bottom: 3px;
 }
 
 nav a:hover,
 nav a.active {
-    color: #ffffff;
-    /* Color blanco al pasar el cursor sobre el enlace o cuando está activo */
+    color: var(--antique-gold);
+    /* Color dorado Antique Gold al pasar el cursor o estar activo */
 }
 
 nav a.active {
-    border-bottom: 2px solid #ffffff;
-    padding-bottom: 2px;
+    border-bottom: 2px solid var(--antique-gold);
 }
 
 /* ==========================================================================
@@ -100,42 +132,45 @@ nav a.active {
     /* Transforma el cuadrado en un círculo perfecto */
     object-fit: cover;
     /* Evita que la foto se estire o deforme, recortando el exceso */
-    border: 4px solid #ffffff;
-    /* Borde blanco alrededor para resaltarla */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    /* Sombra suave para darle relieve */
+    border: 4px solid var(--antique-gold);
+    /* Borde dorado alrededor para resaltar el perfil */
+    box-shadow: 0 6px 20px rgba(201, 154, 71, 0.35);
+    /* Sombra dorada suave para darle relieve de lujo */
 }
 
 /* ==========================================================================
    5. TEXTOS DE PERFIL (NOMBRE, SUBTÍTULO, DIVISOR Y BIOGRAFÍA)
    ========================================================================== */
 .profile-name {
-    font-size: 1.8rem;
+    font-size: 1.85rem;
     font-weight: 700;
-    color: #272757;
+    color: var(--navy-blue);
     margin-bottom: 6px;
+    letter-spacing: -0.5px;
 }
 
 .profile-subtitle {
     font-size: 1.05rem;
     font-weight: 600;
-    color: #3b3b72;
+    color: var(--antique-gold);
     margin-bottom: 18px;
 }
 
 .divider {
     width: 60px;
     height: 3px;
-    background-color: #272757;
+    /* Degradado dorado lineal de izquierda a derecha */
+    background: var(--gold-gradient);
     margin: 0 auto 20px auto;
     border-radius: 2px;
 }
 
 .profile-bio {
     font-size: 0.95rem;
-    line-height: 1.6;
-    color: #272757;
+    line-height: 1.65;
+    color: var(--navy-blue);
     margin-bottom: 30px;
+    opacity: 0.92;
 }
 
 /* ==========================================================================
@@ -161,7 +196,7 @@ nav a.active {
     text-decoration: none;
     color: #ffffff;
     transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px rgba(13, 27, 42, 0.2);
 }
 
 .btn svg {
@@ -203,21 +238,23 @@ nav a.active {
 }
 
 /* ==========================================================================
-   7. PÁGINA DE PROYECTOS (ESTILO MODERNO DE REFERENCIA)
+   7. PÁGINA DE PROYECTOS (ESTILO NAVY & GOLD)
    ========================================================================== */
 
-/* Fondo claro para la página cuando se use el diseño moderno */
+/* Fondo azul con degradado uniforme en páginas secundarias */
 body.light-theme {
-    background-color: #031952;
+    background: var(--bg-gradient);
+    background-attachment: fixed;
 }
 
-/* Tarjeta principal blanca para proyectos */
+/* Tarjeta principal marfil (Ivory) para proyectos */
 .card-projects {
-    background-color: #d5c58a;
+    background-color: var(--ivory);
+    border: 1px solid rgba(201, 154, 71, 0.35);
     width: 92%;
     max-width: 820px;
     border-radius: 24px;
-    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 16px 45px rgba(13, 27, 42, 0.35);
     padding: 45px 50px;
     text-align: left;
 }
@@ -232,22 +269,22 @@ body.light-theme {
 
 .card-projects nav a {
     text-decoration: none;
-    color: #555e6d;
+    color: var(--ocean-blue);
     font-weight: 500;
     font-size: 0.95rem;
-    transition: color 0.25s ease;
+    transition: color 0.25s ease, border-color 0.25s ease;
     padding-bottom: 4px;
 }
 
 .card-projects nav a:hover {
-    color: #080342;
+    color: var(--antique-gold);
 }
 
-/* Indicador de pestaña activa con color morado/azul */
+/* Indicador de pestaña activa con color Antique Gold */
 .card-projects nav a.active {
-    color: #080342;
-    font-weight: 600;
-    border-bottom: 2.5px solid #030125;
+    color: var(--navy-blue);
+    font-weight: 700;
+    border-bottom: 2.5px solid var(--antique-gold);
 }
 
 /* Encabezado: Título, barrita decorativa y subtítulo */
@@ -258,23 +295,23 @@ body.light-theme {
 .projects-title {
     font-size: 2.1rem;
     font-weight: 700;
-    color: #111827;
+    color: var(--navy-blue);
     letter-spacing: -0.5px;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .accent-line {
-    width: 36px;
+    width: 44px;
     height: 3.5px;
-    background-color: #272757;
+    background: var(--gold-gradient);
     border-radius: 3px;
     margin-bottom: 12px;
 }
 
 .projects-subtitle {
-    color: #6b7280;
+    color: var(--ocean-blue);
     font-size: 0.95rem;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1.5;
 }
 
@@ -291,7 +328,7 @@ body.light-theme {
     justify-content: space-between;
     gap: 35px;
     padding: 28px 0;
-    border-bottom: 1px solid #edf0f5;
+    border-bottom: 1px solid rgba(201, 154, 71, 0.25);
 }
 
 .project-row:last-child {
@@ -305,27 +342,28 @@ body.light-theme {
 }
 
 .project-info h3 {
-    font-size: 1.22rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    color: #111827;
+    color: var(--navy-blue);
     margin-bottom: 8px;
     letter-spacing: -0.2px;
 }
 
 .project-info p {
-    color: #6b7280;
+    color: var(--navy-blue);
+    opacity: 0.85;
     font-size: 0.92rem;
     line-height: 1.55;
     margin-bottom: 14px;
 }
 
-/* Enlace "Ver proyecto ->" */
+/* Enlace "Ver proyecto ->" con acento dorado */
 .project-link {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    color: #080347;
-    font-weight: 600;
+    color: var(--antique-gold);
+    font-weight: 700;
     font-size: 0.92rem;
     text-decoration: none;
     transition: color 0.2s ease, gap 0.2s ease;
@@ -338,12 +376,12 @@ body.light-theme {
 }
 
 .project-link:hover {
-    color: #07014b;
+    color: var(--ocean-blue);
     gap: 9px;
 }
 
 .project-link:hover span {
-    transform: translateX(3px);
+    transform: translateX(4px);
 }
 
 /* Columna derecha: Miniatura o maqueta del proyecto */
@@ -353,8 +391,9 @@ body.light-theme {
     flex-shrink: 0;
     border-radius: 14px;
     overflow: hidden;
-    background-color: #f7f8fc;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    background-color: rgba(27, 54, 93, 0.06);
+    border: 1px solid rgba(201, 154, 71, 0.25);
+    box-shadow: 0 4px 14px rgba(13, 27, 42, 0.08);
 }
 
 .project-preview img {
@@ -366,7 +405,7 @@ body.light-theme {
 }
 
 .project-row:hover .project-preview img {
-    transform: scale(1.04);
+    transform: scale(1.05);
 }
 
 /* ==========================================================================
@@ -397,16 +436,17 @@ body.light-theme {
 }
 
 /* ==========================================================================
-   9. PÁGINA DE CONTACTO (ADAPTADA A LA PALETA DE TU PÁGINA)
+   9. PÁGINA DE CONTACTO (ESTILO NAVY & GOLD)
    ========================================================================== */
 
-/* Tarjeta principal para contacto */
+/* Tarjeta principal marfil (Ivory) para contacto */
 .card-contact {
-    background-color: #d5c58a;
+    background-color: var(--ivory);
+    border: 1px solid rgba(201, 154, 71, 0.35);
     width: 92%;
     max-width: 840px;
     border-radius: 24px;
-    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 16px 45px rgba(13, 27, 42, 0.35);
     padding: 45px 50px;
     text-align: left;
 }
@@ -421,21 +461,21 @@ body.light-theme {
 
 .card-contact nav a {
     text-decoration: none;
-    color: #272757;
+    color: var(--ocean-blue);
     font-weight: 500;
     font-size: 0.95rem;
-    transition: color 0.25s ease;
+    transition: color 0.25s ease, border-color 0.25s ease;
     padding-bottom: 4px;
 }
 
 .card-contact nav a:hover {
-    color: #080342;
+    color: var(--antique-gold);
 }
 
 .card-contact nav a.active {
-    color: #080342;
-    font-weight: 600;
-    border-bottom: 2.5px solid #030125;
+    color: var(--navy-blue);
+    font-weight: 700;
+    border-bottom: 2.5px solid var(--antique-gold);
 }
 
 /* Encabezado: Título, barrita decorativa y subtítulo */
@@ -446,13 +486,13 @@ body.light-theme {
 .contact-title {
     font-size: 2.1rem;
     font-weight: 700;
-    color: #080342;
+    color: var(--navy-blue);
     letter-spacing: -0.5px;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .contact-subtitle {
-    color: #272757;
+    color: var(--ocean-blue);
     font-size: 0.95rem;
     font-weight: 500;
     line-height: 1.55;
@@ -482,32 +522,32 @@ body.light-theme {
 .form-group label {
     font-size: 0.88rem;
     font-weight: 600;
-    color: #080342;
+    color: var(--navy-blue);
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
     background-color: #ffffff;
-    border: 1.5px solid rgba(8, 3, 66, 0.18);
+    border: 1.5px solid rgba(27, 54, 93, 0.2);
     border-radius: 10px;
     padding: 12px 14px;
     font-family: inherit;
     font-size: 0.92rem;
-    color: #080342;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    color: var(--navy-blue);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: #8c8c9e;
+    color: rgba(27, 54, 93, 0.45);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #080342;
-    box-shadow: 0 0 0 3px rgba(8, 3, 66, 0.15);
+    border-color: var(--antique-gold);
+    box-shadow: 0 0 0 3px rgba(201, 154, 71, 0.25);
 }
 
 .form-group textarea {
@@ -515,22 +555,22 @@ body.light-theme {
     min-height: 105px;
 }
 
-/* Botón Enviar mensaje con icono de avión de papel */
+/* Botón Enviar mensaje con estilo de alto contraste y elegancia */
 .btn-send {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    background-color: #080342;
-    color: #ffffff;
-    border: none;
+    background: var(--navy-blue);
+    color: var(--ivory);
+    border: 1.5px solid var(--antique-gold);
     border-radius: 10px;
     padding: 13px 24px;
     font-family: inherit;
     font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
-    box-shadow: 0 6px 18px rgba(8, 3, 66, 0.25);
+    box-shadow: 0 6px 18px rgba(13, 27, 42, 0.25);
     transition: all 0.25s ease;
     margin-top: 4px;
     width: 100%;
@@ -538,15 +578,19 @@ body.light-theme {
 
 .btn-send svg {
     transition: transform 0.25s ease;
+    stroke: var(--champagne-gold);
 }
 
 .btn-send:hover {
-    background-color: #030125;
+    background: var(--gold-btn-gradient);
+    color: var(--navy-blue);
+    border-color: var(--champagne-gold);
     transform: translateY(-2px);
-    box-shadow: 0 8px 22px rgba(8, 3, 66, 0.35);
+    box-shadow: 0 8px 22px rgba(201, 154, 71, 0.4);
 }
 
 .btn-send:hover svg {
+    stroke: var(--navy-blue);
     transform: translateX(4px) translateY(-2px);
 }
 
@@ -567,8 +611,9 @@ body.light-theme {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.2) 70%);
-    box-shadow: 0 10px 25px rgba(8, 3, 66, 0.08);
+    background: radial-gradient(circle, rgba(230, 193, 122, 0.3) 0%, rgba(27, 54, 93, 0.08) 70%);
+    border: 1px solid rgba(201, 154, 71, 0.25);
+    box-shadow: 0 10px 25px rgba(13, 27, 42, 0.1);
 }
 
 .contact-illustration img {
@@ -586,32 +631,35 @@ body.light-theme {
 /* Tarjeta flotante "También puedes escribirme a..." */
 .direct-contact-card {
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.6);
-    border: 1px solid rgba(8, 3, 66, 0.12);
+    background-color: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(201, 154, 71, 0.3);
     border-radius: 16px;
     padding: 16px 18px;
     display: flex;
     align-items: center;
     gap: 14px;
     backdrop-filter: blur(4px);
-    transition: background-color 0.25s ease, transform 0.25s ease;
+    transition: background-color 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
 }
 
 .direct-contact-card:hover {
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: #ffffff;
+    border-color: var(--antique-gold);
     transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(13, 27, 42, 0.08);
 }
 
 .direct-icon {
     width: 44px;
     height: 44px;
     border-radius: 12px;
-    background-color: #080342;
-    color: #d5c58a;
+    background-color: var(--navy-blue);
+    color: var(--champagne-gold);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    border: 1px solid rgba(201, 154, 71, 0.35);
 }
 
 .direct-info {
@@ -623,25 +671,27 @@ body.light-theme {
 .direct-label {
     font-size: 0.82rem;
     font-weight: 600;
-    color: #080342;
+    color: var(--ocean-blue);
 }
 
 .direct-email {
     font-size: 0.88rem;
     font-weight: 700;
-    color: #080342;
+    color: var(--navy-blue);
     text-decoration: none;
     transition: color 0.2s;
     word-break: break-all;
 }
 
 .direct-email:hover {
+    color: var(--antique-gold);
     text-decoration: underline;
 }
 
 .direct-note {
     font-size: 0.76rem;
-    color: #3b3b72;
+    color: var(--ocean-blue);
+    opacity: 0.85;
 }
 
 /* Responsividad para móviles en contacto */
